@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+}
+button{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 20px;
+    left: 20px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: solid 2px white;
+    cursor: pointer;
+    background-color: rgb(202, 29, 95);
+    color: white;
+    transition: 0.3s;
+}
+button:hover{
+transform: scale(130%);
+color: black;
+}
+div{
+    position: absolute;
+}
+.chimney, .roof, .walls, .door{
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 0;
+transition: 3s;
+}
+button:hover + .chimney{
+    background-color: gray;
+    width: 10vw;
+    height: 20vw;
+    top: 15%;
+    left: 56%;
+
+}
+
+button:hover ~ .roof{
+    background-color: black;
+    width: 40vw;
+    height: 40vw;
+    top: 15%;
+    left: 31%;
+    transform: rotate(45deg);
+}
+button:hover ~ .walls{
+    background-color: rgb(202, 29, 95);
+    width:56vw ;
+    height: 40vw;
+    top: 35%;
+    left: 23%;
+}
+button:hover ~ .walls :nth-child(1){
+ width: 12vw;
+    height: 12vw;
+    top: 18%;
+    left: 65%;
+    background-color: yellow;
+}
+button:hover ~ .walls :nth-child(2){
+ width: 12vw;
+    height: 12vw;
+    top: 18%;
+    right: 65%;
+    background-color: yellow;
+}
+button:hover ~ .door{
+    width: 12vw;
+    height: 20vw;
+    background-color: gray;
+    top: 55%;
+    left: 45%;
+}
