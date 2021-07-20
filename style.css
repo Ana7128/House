@@ -49,8 +49,8 @@ button:hover + .chimney{
 
 button:hover ~ .roof{
     background-color: black;
-    width: 40vw;
-    height: 40vw;
+    width: calc(56vw/1.4);
+    height:calc(56vw/1.4);
     top: 15%;
     left: 31%;
     transform: rotate(45deg);
