@@ -6,11 +6,12 @@
 
 body {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vw;
 }
-button{
-    position: absolute;
+
+button {
+    position: fixed;
     width: 100px;
     height: 30px;
     top: 20px;
@@ -18,65 +19,86 @@ button{
     padding: 5px;
     text-transform: uppercase;
     font-weight: bold;
-    border: solid 2px white;
-    cursor: pointer;
+    border: solid 2px rgb(202, 29, 95);
     background-color: rgb(202, 29, 95);
     color: white;
+    cursor: pointer;
     transition: 0.3s;
 }
-button:hover{
-transform: scale(130%);
-color: black;
+
+button:hover {
+    background-color: transparent;
+    color: rgb(202, 29, 95);
 }
-div{
+
+div {
     position: absolute;
 }
-.chimney, .roof, .walls, .door{
+
+.chimney,
+.roof,
+.walls,
+.door,
+.walls div {
     width: 0;
     height: 0;
-    bottom: 0;
+    top: 100%;
     left: 0;
-transition: 3s;
+    transition: all 1s, background-color .5s .2s;
+    transition-timing-function: ease-in-out;
 }
-button:hover + .chimney{
+
+.walls div {
+    top: 20%;
+    left: 20%;
+}
+
+.walls div:nth-child(1) {
+    left: 50%;
+}
+
+button:hover+.chimney {
     background-color: gray;
     width: 10vw;
     height: 20vw;
     top: 15%;
     left: 56%;
-
 }
 
-button:hover ~ .roof{
+button:hover~.roof {
     background-color: black;
     width: calc(56vw/1.4);
-    height:calc(56vw/1.4);
+    height: calc(56vw/1.4);
     top: 15%;
     left: 31%;
     transform: rotate(45deg);
 }
-button:hover ~ .walls{
+
+button:hover~.walls {
     background-color: rgb(202, 29, 95);
-    width:56vw ;
+    width: 56vw;
     height: 40vw;
     top: 35%;
     left: 23%;
 }
-button:hover ~ .walls :nth-child(1){
- width: 12vw;
+
+button:hover~.walls :nth-child(1) {
+    width: 12vw;
     height: 12vw;
     top: 18%;
     left: 65%;
     background-color: yellow;
 }
-button:hover ~ .walls :nth-child(2){
- width: 12vw;
+
+button:hover~.walls :nth-child(2) {
+    width: 12vw;
     height: 12vw;
     top: 18%;
-    right: 65%;
+    left: 10%;
     background-color: yellow;
 }
-button:hover ~ .door{
+
+button:hover~.door {
     width: 12vw;
     height: 20vw;
     background-color: gray;
